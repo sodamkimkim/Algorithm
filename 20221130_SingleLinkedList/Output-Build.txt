@@ -1,0 +1,14 @@
+﻿Build started...
+1>------ Build started: Project: 20221130_SingleLinkedList, Configuration: Debug Win32 ------
+1>main.c
+1>C:\Unity\20221130_SingleLinkedList\main.c(13,39): warning C4114: same type qualifier used more than once
+1>C:\Unity\20221130_SingleLinkedList\main.c(13,61): warning C4114: same type qualifier used more than once
+1>C:\Unity\20221130_SingleLinkedList\main.c(38,17): warning C4133: 'function': incompatible types - from 'char [4]' to 'const SNode *const '
+1>C:\Unity\20221130_SingleLinkedList\main.c(38,19): warning C4020: 'PrintAll': too many actual parameters
+1>C:\Unity\20221130_SingleLinkedList\main.c(65,39): warning C4114: same type qualifier used more than once
+1>C:\Unity\20221130_SingleLinkedList\main.c(65,61): warning C4114: same type qualifier used more than once
+1>C:\Unity\20221130_SingleLinkedList\main.c(91,17): warning C4047: '=': 'SNode *' differs in levels of indirection from 'const int'
+1>C:\Unity\20221130_SingleLinkedList\main.c(140,22): warning C4028: formal parameter 1 different from declaration
+1>20221130_SingleLinkedList.vcxproj -> C:\Unity\20221130_SingleLinkedList\Debug\20221130_SingleLinkedList.exe
+1>Done building project "20221130_SingleLinkedList.vcxproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

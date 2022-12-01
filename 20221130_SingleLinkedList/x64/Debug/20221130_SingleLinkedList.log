@@ -1,0 +1,18 @@
+﻿  main.c
+C:\Unity\20221130_SingleLinkedList\main.c(9,48): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(14,51): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(14,73): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(16,54): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(46,48): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(58,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+C:\Unity\20221130_SingleLinkedList\main.c(66,51): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(66,73): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(69,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+C:\Unity\20221130_SingleLinkedList\main.c(71,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+C:\Unity\20221130_SingleLinkedList\main.c(92,53): warning C4114: 동일한 형식 한정자를 두 번 이상 사용했습니다.
+C:\Unity\20221130_SingleLinkedList\main.c(95,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+C:\Unity\20221130_SingleLinkedList\main.c(97,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+C:\Unity\20221130_SingleLinkedList\main.c(98,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+C:\Unity\20221130_SingleLinkedList\main.c(131,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+C:\Unity\20221130_SingleLinkedList\main.c(146,1): warning C4090: '초기화 중': 'const' 한정자가 서로 다릅니다.
+  20221130_SingleLinkedList.vcxproj -> C:\Unity\20221130_SingleLinkedList\x64\Debug\20221130_SingleLinkedList.exe

@@ -1,0 +1,7 @@
+﻿  main.c
+C:\Unity\20221130_SingleLinkedList\main.c(13,45): warning C4114: same type qualifier used more than once
+C:\Unity\20221130_SingleLinkedList\main.c(13,67): warning C4114: same type qualifier used more than once
+C:\Unity\20221130_SingleLinkedList\main.c(67,45): warning C4114: same type qualifier used more than once
+C:\Unity\20221130_SingleLinkedList\main.c(67,67): warning C4114: same type qualifier used more than once
+C:\Unity\20221130_SingleLinkedList\main.c(109,22): warning C4028: formal parameter 1 different from declaration
+  20221130_SingleLinkedList.vcxproj -> C:\Unity\20221130_SingleLinkedList\Debug\20221130_SingleLinkedList.exe
