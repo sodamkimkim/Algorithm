@@ -1,0 +1,9 @@
+﻿  main.c
+C:\Unity\20221201_BinaryTree\main.c(13,48): warning C4114: same type qualifier used more than once
+C:\Unity\20221201_BinaryTree\main.c(38,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Unity\20221201_BinaryTree\main.c(52,48): warning C4114: same type qualifier used more than once
+C:\Unity\20221201_BinaryTree\main.c(65,1): warning C4090: 'initializing': different 'const' qualifiers
+C:\Unity\20221201_BinaryTree\main.c(121,38): warning C4090: 'function': different 'const' qualifiers
+C:\Unity\20221201_BinaryTree\main.c(122,39): warning C4090: 'function': different 'const' qualifiers
+C:\Unity\20221201_BinaryTree\main.c(127,17): warning C4090: 'function': different 'const' qualifiers
+  20221201_BinaryTree.vcxproj -> C:\Unity\20221201_BinaryTree\Debug\20221201_BinaryTree.exe
