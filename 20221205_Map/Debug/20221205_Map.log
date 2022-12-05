@@ -1,0 +1,9 @@
+﻿  main.c
+C:\c\20221205_Map\main.c(17,20): warning C4114: same type qualifier used more than once
+C:\c\20221205_Map\main.c(18,25): warning C4114: same type qualifier used more than once
+C:\c\20221205_Map\main.c(25,43): warning C4114: same type qualifier used more than once
+C:\c\20221205_Map\main.c(44,20): warning C4114: same type qualifier used more than once
+C:\c\20221205_Map\main.c(53,23): warning C4090: '=': different 'const' qualifiers
+C:\c\20221205_Map\main.c(84,25): warning C4114: same type qualifier used more than once
+C:\c\20221205_Map\main.c(141,42): warning C4114: same type qualifier used more than once
+  20221205_Map.vcxproj -> C:\c\20221205_Map\Debug\20221205_Map.exe
