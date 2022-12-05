@@ -4,7 +4,7 @@
 
 #define SAFE_FREE(p)\
 {\
-do{if(p){free(p); p=NULL;}}while(0)\
+do{if(p){free(p); p=NULL;}}while(0);\
 }
 typedef struct _SNode
 {
