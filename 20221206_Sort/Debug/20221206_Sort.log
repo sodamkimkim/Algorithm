@@ -1,0 +1,11 @@
+﻿  main.c
+C:\Algorithm\20221206_Sort\main.c(9,50): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(10,49): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(12,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(14,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(17,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Algorithm\20221206_Sort\main.c(40,50): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(46,49): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(54,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(85,48): warning C4114: same type qualifier used more than once
+  20221206_Sort.vcxproj -> C:\Algorithm\20221206_Sort\Debug\20221206_Sort.exe

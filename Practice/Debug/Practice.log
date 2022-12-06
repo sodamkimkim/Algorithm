@@ -1,0 +1,13 @@
+﻿  main.c
+C:\Algorithm\Practice\main.c(17,20): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(18,25): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(23,42): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(30,20): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(35,23): warning C4090: '=': different 'const' qualifiers
+C:\Algorithm\Practice\main.c(63,25): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(87,30): error C2065: 'pCur': undeclared identifier
+C:\Algorithm\Practice\main.c(87,10): warning C4473: 'printf' : not enough arguments passed for format string
+C:\Algorithm\Practice\main.c(87,10): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
+C:\Algorithm\Practice\main.c(87,10): message : the missing variadic argument 2 is required by format string '%s'
+C:\Algorithm\Practice\main.c(88,2): error C2143: syntax error: missing ';' before '}'
+C:\Algorithm\Practice\main.c(106,42): warning C4114: same type qualifier used more than once
