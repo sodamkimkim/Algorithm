@@ -1,11 +1,33 @@
 ﻿  main.c
-C:\Algorithm\20221206_Sort\main.c(9,50): warning C4114: same type qualifier used more than once
-C:\Algorithm\20221206_Sort\main.c(10,49): warning C4114: same type qualifier used more than once
-C:\Algorithm\20221206_Sort\main.c(12,48): warning C4114: same type qualifier used more than once
-C:\Algorithm\20221206_Sort\main.c(14,48): warning C4114: same type qualifier used more than once
-C:\Algorithm\20221206_Sort\main.c(17,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Algorithm\20221206_Sort\main.c(40,50): warning C4114: same type qualifier used more than once
-C:\Algorithm\20221206_Sort\main.c(46,49): warning C4114: same type qualifier used more than once
-C:\Algorithm\20221206_Sort\main.c(54,48): warning C4114: same type qualifier used more than once
-C:\Algorithm\20221206_Sort\main.c(85,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(10,46): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(12,50): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(13,49): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(14,55): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(14,77): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(15,55): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(15,77): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(18,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(20,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(22,45): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(24,44): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(35,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Algorithm\20221206_Sort\main.c(77,46): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(89,50): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(95,49): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(103,55): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(103,77): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(117,55): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(117,77): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(123,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(146,48): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(170,45): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(198,44): warning C4114: same type qualifier used more than once
+C:\Algorithm\20221206_Sort\main.c(218,46): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+C:\Algorithm\20221206_Sort\main.c(218,40): warning C4024: 'SortingInDevidedLeftArr': different types for formal and actual parameter 3
+C:\Algorithm\20221206_Sort\main.c(218,58): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+C:\Algorithm\20221206_Sort\main.c(218,48): warning C4024: 'SortingInDevidedLeftArr': different types for formal and actual parameter 4
+C:\Algorithm\20221206_Sort\main.c(219,47): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+C:\Algorithm\20221206_Sort\main.c(219,41): warning C4024: 'SortingInDevidedRightArr': different types for formal and actual parameter 3
+C:\Algorithm\20221206_Sort\main.c(219,59): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+C:\Algorithm\20221206_Sort\main.c(219,49): warning C4024: 'SortingInDevidedRightArr': different types for formal and actual parameter 4
   20221206_Sort.vcxproj -> C:\Algorithm\20221206_Sort\Debug\20221206_Sort.exe
