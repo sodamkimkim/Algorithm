@@ -1,126 +1,95 @@
 #include <stdio.h>
-#include <malloc.h>
-#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#define ARR_LEN 10
 
-#define SAFE_FREE(p)\
-{\
-do{if(p){free(p); p=NULL;}}while(0);\
-}
-typedef struct _SNode
-{
-	int key;
-	char* msg;
-	struct _SNode* pNext;
-}SNode;
+void SetRandomNumber(int* const _pArr, const int const _len);
+void PrintAll(const int* const _pArr, const int const _len);
+void Swap(int* _left, int* _right);
 
-SNode* pHead = NULL;
-void Add(const int const _key, const char* const _pMsg);
-SNode* Search(const int const _key);
-void PrintAll();
-void DestroyAll();
-
-int StrLen(const char* const _pStr);
-void StrCpy(char* const _pDst, const int const _size, const char* const _pSrc);
-
+void QuickSort(int* const _pArr, const int const _len, const int const _startIdx, const int const _endIdx);
+int Partition(int* const _pArr, const int const _len, int _leftIdx, int _rightIdx);
 int main()
 {
+	srand(time(NULL));
+	int arr[ARR_LEN] = { 0 };
+	int len = sizeof(arr) / sizeof(arr[0]);
+
+	SetRandomNumber(arr, len);
+	PrintAll(arr, len);
+	QuickSort(arr, len, 0, len - 1);
+	PrintAll(arr, len);
 
 	return 0;
 }
-void Add(const int const _key, const char* const _pMsg)
+void SetRandomNumber(int* const _pArr, const int const _len)
 {
-	SNode* pNewNode = (SNode*)malloc(sizeof(SNode));
-	pNewNode->key = _key;
-	int len = StrLen(_pMsg);
-	pNewNode->msg = _pMsg;
-	pNewNode->msg = (char*)malloc(sizeof(char) * (len + 1));
-	StrCpy(pNewNode->msg, len, _pMsg);
-	pNewNode->pNext = NULL;
-	if (pHead == NULL)
+	if (_pArr == NULL || _len == 0) return;
+	for (int i = 0; i < _len; i++)
+		_pArr[i] = (rand() % 100) + 1;
+}
+void PrintAll(const int* const _pArr, const int const _len)
+{
+	for (int i = 0; i < _len; i++)
+		printf("%d - ", _pArr[i]);
+	printf("(%d)\n", _len);
+}
+
+void Swap(int* _left, int* _right)
+{
+	int temp = *_left;
+	*_left = *_right;
+	*_right = temp;
+}
+
+void QuickSort(int* const _pArr, const int const _len, const int const _startIdx, const int const _endIdx)
+{
+	if (_pArr == NULL || _len == 0) return;
+	if (_startIdx >= _endIdx) return;
+	int curPivot = Partition(_pArr, _len, _startIdx, _endIdx);
+	QuickSort(_pArr, _len, _startIdx, curPivot - 1);
+	QuickSort(_pArr, _len, curPivot+1, _endIdx);
+}
+
+int Partition(int* const _pArr, const int const _len, const int const _startIdx, const int const _endIdx)
+{
+	if (_pArr == NULL || _len == 0) return;
+	int pivotIdx = _startIdx;
+	// 왼 <-> 오 움직이는 인덱스 변수 ㄱ
+	int leftIdx = _startIdx + 1;
+	int rightIdx = _endIdx;
+
+	const int startIdx = leftIdx;
+	const int endIdx = rightIdx;
+
+	// while에서 인덱스 변수들 움직이면서 배열내 숫자들 정렬
+	while (leftIdx < rightIdx)
 	{
-		pHead = pNewNode;
-		return;
-	}
-	SNode* pCurNode = pHead;
-	while (1)
-	{
-		if (pCurNode->key == pNewNode->key)
+		// 1. 왼쪽 인덱스가 피봇 값보다 큰 값이 나올 떄까지 오른쪽으로 이동 ~ 배열 끝까지 이동
+		while (leftIdx < endIdx &&(_pArr[leftIdx] <= _pArr[pivotIdx]))
 		{
-			SAFE_FREE(pNewNode->msg);
-			SAFE_FREE(pNewNode);
-			return;
+			++leftIdx;
 		}
-		if (pCurNode->pNext == NULL)
+		// 2. 오른쪽 인덱스가 피봇 값보다 작은 값이 나올 때까지 왼쪽으로 이동 ~ 배열 시작까지 이동
+		while (rightIdx > startIdx && (_pArr[rightIdx] >= _pArr[pivotIdx]))
 		{
-			pCurNode->pNext = pNewNode;
-			break;
+			--rightIdx;
 		}
-		pCurNode = pCurNode->pNext;
-	}
+		// ** 두 인덱스가 교차 했다면 종료
+		if (leftIdx > rightIdx) break;
 
-}
+		// 3. 왼쪽 값과 오른쪽 값 교환
+		Swap(&_pArr[leftIdx], &_pArr[rightIdx]);
+	} // while
 
-SNode* Search(const int const _key)
-{
-	if (pHead == NULL) return NULL;
-	SNode* pCurNode = pHead;
-	while (pCurNode != NULL)
+	// 4. 오른쪽 인덱스 값과 피봇 값 교환.
+	//모두 정렬 후, 오른쪽 인덱스 값과 피봇 값 교환조건에 맞으면 (p값>rIdx값) 교환 수행
+	if (_pArr[pivotIdx] > _pArr[rightIdx])
 	{
-		if (pCurNode->key == _key)
-			return pCurNode;
-		pCurNode = pCurNode->pNext;
+		Swap(&_pArr[pivotIdx], &_pArr[rightIdx]);
+		// 현재 피봇값이 들어간 인덱스.
+		// 파티션 기준이 됨
+		return rightIdx;
 	}
-	return NULL;
-}
-
-void PrintAll()
-{
-	if (pHead == NULL)
-	{
-		printf("Is Empty! \n");
-		return;
-	}
-	SNode* pCurNode = pHead;
-	int cnt = 0;
-	while (pCurNode != NULL)
-	{
-		printf("{%d : %s} - ", pCurNode->key, pCurNode->msg);
-		pCurNode = pCurNode->pNext;
-		++cnt;
-	}
-	printf("(%d)\n", cnt);
-}
-
-void DestroyAll()
-{
-	if (pHead == NULL) return;
-	SNode* pCurNode = pHead;
-	SNode* pDestroyNode = NULL;
-	while (pCurNode != NULL)
-	{
-		pDestroyNode = pCurNode;
-		pCurNode = pCurNode->pNext;
-
-	}
-}
-
-int StrLen(const char* const _pStr)
-{
-	if (_pStr == NULL) return -1;
-	int cnt = 0;
-	while (_pStr[cnt] != '\0')
-	{
-		++cnt;
-	}
-	return cnt;
-}
-
-void StrCpy(char* const _pDst, const int const _size, const char* const _pSrc)
-{
-	if (_pDst == NULL || _pSrc == NULL) return;
-	for (int i = 0; i < _size; ++i)
-	{
-		_pDst[i] = _pSrc[i];
-	}
-	_pDst[_size] = '\0';
+	return pivotIdx;
 }

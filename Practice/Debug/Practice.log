@@ -1,13 +1,19 @@
 ﻿  main.c
-C:\Algorithm\Practice\main.c(17,20): warning C4114: same type qualifier used more than once
-C:\Algorithm\Practice\main.c(18,25): warning C4114: same type qualifier used more than once
-C:\Algorithm\Practice\main.c(23,42): warning C4114: same type qualifier used more than once
-C:\Algorithm\Practice\main.c(30,20): warning C4114: same type qualifier used more than once
-C:\Algorithm\Practice\main.c(35,23): warning C4090: '=': different 'const' qualifiers
-C:\Algorithm\Practice\main.c(63,25): warning C4114: same type qualifier used more than once
-C:\Algorithm\Practice\main.c(87,30): error C2065: 'pCur': undeclared identifier
-C:\Algorithm\Practice\main.c(87,10): warning C4473: 'printf' : not enough arguments passed for format string
-C:\Algorithm\Practice\main.c(87,10): message : placeholders and their parameters expect 2 variadic arguments, but 1 were provided
-C:\Algorithm\Practice\main.c(87,10): message : the missing variadic argument 2 is required by format string '%s'
-C:\Algorithm\Practice\main.c(88,2): error C2143: syntax error: missing ';' before '}'
-C:\Algorithm\Practice\main.c(106,42): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(6,50): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(7,49): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(10,44): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(10,66): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(10,93): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(11,43): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(14,18): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Algorithm\Practice\main.c(25,50): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(31,49): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(45,44): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(45,66): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(45,93): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(56,43): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(56,65): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(56,92): warning C4114: same type qualifier used more than once
+C:\Algorithm\Practice\main.c(58,34): warning C4033: 'Partition' must return a value
+C:\Algorithm\Practice\main.c(97): warning C4715: 'Partition': not all control paths return a value
+  Practice.vcxproj -> C:\Algorithm\Practice\Debug\Practice.exe

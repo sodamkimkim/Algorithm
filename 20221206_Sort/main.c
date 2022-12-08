@@ -2,7 +2,7 @@
 // 랜덤함수 쓰기 위해 필요한 헤더파일 2개
 #include <stdlib.h>
 #include <time.h> 
-#define ARR_LEN 8
+#define ARR_LEN 5
 //#define DEBUG_SELECTION
 //#define DEBUG_INSERTION
 #define DEBUG_BUBBLE
@@ -21,7 +21,8 @@ void InsertionSort(int* const _pArr, const int const _len);
 // # 거품 정렬
 void BubbleSort(int* const _pArr, const int const _len);
 // # 퀵 정렬
-void QuickSort(int* const _pArr, const int const _len);
+void QuickSort(int* const _pArr, const int const _left, const int const _right);
+int Partition(int* const _pArr, int _left, int _right);
 
 void Swap(int* _left, int* _right);
 
@@ -66,10 +67,12 @@ int main()
 	// # test of 퀵 정렬
 	printf(" - Quick Sort -\n");
 	//SetRandomNumber(arr, len);
-	TestNumbers(arr, len);
-	PrintAll(arr, len);
-	QuickSort(arr, len);
-	PrintAll(arr, len);
+	//TestNumbers(arr, len);
+	int qArr[7] = { 5,1,7,4,3,2,6 };
+	int qLen = 7;
+	PrintAll(qArr, qLen);
+	QuickSort(qArr, 0, qLen - 1);
+	PrintAll(qArr, qLen);
 
 	return 0;
 } // end of main()
@@ -195,44 +198,44 @@ void BubbleSort(int* const _pArr, const int const _len)
 	}
 } // end of BubbleSort()
 
-void QuickSort(int* const _pArr, const int const _len)
+void QuickSort(int* _pArr, int _left, int _right)
 {
-	// ** pivot : _pArr[0]으로 정함.
-	if (_pArr == NULL || _len == 0) return;
-	int* lpIdx = (int*)malloc(sizeof(int));
-	int* rpIdx = (int*)malloc(sizeof(int));
-	*lpIdx = 0;
-	*rpIdx = 0;
-	/*int lhIdx = pIdx + 1;
-	int rlIdx = _len - 1;*/
-	int* devideIdx = (int*)malloc(sizeof(int));
-	*devideIdx = _len / 2;
-	// lhIdx <= rlIdx 일 동안만 반복
-	// lh번째가 pivot보다 크고 rl번째가 pivot보다 작으면 => lh번째 값과 rl번째 값 스왑
-	//printf("%d  , %d\n", _pArr[lhIdx], _pArr[rlIdx]);
-	//printf("%p  , %p\n", &(_pArr[lhIdx]), &(_pArr[rlIdx]));
-	// pIdx가 계속 바뀌고, devideIdx가 계속 바뀌는데..
-	// sorting종료 조건? 
-	for (int i = 0; i < _len; i++)
+	if (_left < _right)
 	{
-		SortingInDevidedLeftArr(_pArr, _len, &lpIdx, &devideIdx);
-		SortingInDevidedRightArr(_pArr, _len, &rpIdx, &devideIdx);
-		//printf("%d\n", *devideIdx);
-		printf("??\n");
+		int idx = Partition(_pArr, _left, _right);
+		QuickSort(_pArr, _left, idx - 1);
+		QuickSort(_pArr, idx + 1, _right);
 
 	}
+}
 
-}// end of QuickSort()
+int Partition(int* const _pArr, int _left, int _right)
+{
+	int first = _left; // 정렬 대상 배열의 첫번째 인덱스는 _left가 되고, 
+	int pivot = _pArr[first]; // _pArr[_left]가 pivot이 됨
+	++_left; // pivot값 할당 한 후에 _left의 본업 수행을 위해 ++_left해줌
+
+	while (_left <= _right)
+	{
+		while (_pArr[_left] <= pivot && _left < _right)
+			++_left;
+		while (_pArr[_right] >= pivot && _left <= _right)
+			--_right;
+		if (_left < _right) // 위의 while다 돌았는데 _left < _right이면 swap. 아니면 break;
+			Swap(&_pArr[_left], &_pArr[_right]);
+		else
+			break;
+	}
+	Swap(&_pArr[first], &_pArr[_right]);
+	return _right;
+}
+
 void Swap(int* _left, int* _right)
 {
 	int temp = *_left;
 	*_left = *_right;
 	*_right = temp;
 }
-// pivot과 바뀐 idx (지금은 rlIdx)기준으로 
-// left와 right로 arr를 devide해주는 함수.
-// 일단 기준 인덱스와 left 혹은 right 차이가 <=1이면 그냥 return.
-// ㄴ 위에 해당 안되는 left or right만 다시 정렬.
 
 void SortingInDevidedLeftArr(int* _pArr, int _len, int* _lpIdx, int* _devideIdx)
 {
@@ -243,11 +246,7 @@ void SortingInDevidedLeftArr(int* _pArr, int _len, int* _lpIdx, int* _devideIdx)
 	}
 	int lhIdx = *_lpIdx + 1;
 	int rhIdx = (*_devideIdx) - 1;
-	/*
-아니 이함수 반복할 건데
-devideIdx는 rlIdx가 들어오고
-pivot은 _pArr[0] 이거나 devideIdx +1
-	*/
+
 	if (rhIdx - lhIdx <= 1)
 	{
 		return;
@@ -278,48 +277,6 @@ pivot은 _pArr[0] 이거나 devideIdx +1
 			Swap(&(_pArr[*_lpIdx]), &(_pArr[rhIdx]));
 			*_devideIdx = rhIdx;
 		}
-		*_lpIdx = 
-	}
-}
-void SortingInDevidedRightArr(int* _pArr, int _len, int* _rpIdx, int* _devideIdx)
-{
-	if (*_devideIdx == _len)
-	{
-		printf("*_devideIdx  == _len => Right 리턴합니다.\n");
-		return;
-	}
-	int lhIdx = *_devideIdx + 1;
-	int rhIdx = _len - 1;
 
-	if (rhIdx - lhIdx <= 1)
-	{
-		return;
-	}
-	while (lhIdx < rhIdx)
-	{
-		printf("???\n");
-		if (rhIdx - lhIdx <= 1)
-		{
-			printf("_rlIdx - _lhIdx <= 1 => SortingInDevidedRightArr return합니다.\n");
-			return;
-		}
-		if (_pArr[lhIdx] > _pArr[*_rpIdx] && _pArr[rhIdx] < _pArr[*_rpIdx])
-		{
-			Swap(&(_pArr[lhIdx]), &(_pArr[rhIdx]));
-		}
-		if (!(_pArr[lhIdx] > _pArr[*_rpIdx]))
-		{
-			lhIdx++;
-		}
-		if (!(_pArr[rhIdx] < _pArr[*_rpIdx]))
-		{
-			rhIdx--;
-		}
-		// pivot이랑 rlIdx랑 바꿔주는 코드
-		if (lhIdx == rhIdx)
-		{
-			Swap(&(_pArr[*_rpIdx]), &(_pArr[rhIdx]));
-			*_devideIdx = rhIdx;
-		}
 	}
 }
